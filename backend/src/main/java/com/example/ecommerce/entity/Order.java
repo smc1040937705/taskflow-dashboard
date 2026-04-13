@@ -29,6 +29,7 @@ public class Order {
     private User user;
     
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
     private List<OrderItem> items = new ArrayList<>();
     
     @Enumerated(EnumType.STRING)
